@@ -42,36 +42,6 @@ The project uses **MySQL** as the database and organizes entity classes based on
 
 Create `hibernate.cfg.xml` in src/main/resources
 
-```
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC
-		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
-<hibernate-configuration>
-	<session-factory>
-	
-		<!-- Enable second-level cache -->
-		<property name="hibernate.cache.use_second_level_cache">true</property> 
-		<!-- Configure the region factory for Ehcache 3.x -->
-		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
-		<property name="hibernate.cache.use_query_cache">true</property>
-
-		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.password">your password</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/firstdb</property>
-		<property name="hibernate.connection.username">root</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-		<property name="hibernate.show_sql">true</property>
-		<property name="hibernate.hbm2ddl.auto">update</property>
-
-    <!-- Mapping for classes of package com.firstHB -->
-		<mapping class="com.firstHB.Student" />  3all mappings will be needed here
-
-	</session-factory>
-</hibernate-configuration>
-
-```
-
 1. Create a MySQL database named **`firstdb`**:   
 ```sql
 CREATE DATABASE firstdb;      #change accordingly by making a table of your choice
