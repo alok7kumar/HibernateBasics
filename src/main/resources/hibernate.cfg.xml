@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+	
+		<!-- Enable second-level cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property> 
+		<!-- Configure the region factory for Ehcache 3.x -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		
+		
+
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.password">alok@25</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/firstdb</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- Mapping for classes of package com.firstHB -->
+		<mapping class="com.firstHB.Student" />
+
+		<!-- Mapping for classes of package one.to.one -->
+		<mapping class="one.to.one.Employee" />
+		<mapping class="one.to.one.Full_Name" />
+
+		<!-- Mapping for classes of package one.to.many -->
+		<mapping class="one.to.many.Question" />
+		<mapping class="one.to.many.Answer" />
+
+		<!-- Mapping for classes of package many.to.one -->
+		<mapping class="many.to.one.Department" />
+		<mapping class="many.to.one.Person" />
+
+		<!-- Mapping for classes of package many.to.many -->
+		<mapping class="many.to.many.Customer" />
+		<mapping class="many.to.many.Product" />
+
+		<!-- Mapping for classes of package TPH -->
+		<mapping class="TPH.Animal" />
+		<mapping class="TPH.Cat" />
+		<mapping class="TPH.Dog" />
+
+		<!-- Mapping for classes of package TPC -->
+		<mapping class="TPC.Ani" />
+		<mapping class="TPC.Fish" />
+		<mapping class="TPC.Sparrow" />
+
+		<!-- Mapping for classes of package TPS -->
+		<mapping class="TPS.Vehicle" />
+		<mapping class="TPS.Car" />
+		<mapping class="TPS.Helicopter" />
+
+		<!-- Mapping for classes of package collection -->
+		<mapping class="collection.Candidate" />
+		<mapping class="collection.Call" />
+
+		<!-- Mapping for classes of package caching -->
+		<mapping class="caching.Student1" />
+
+	</session-factory>
+</hibernate-configuration>
